@@ -12,17 +12,17 @@ public class User {
 	private String userName = "";
 	private String firstName  = "";
 	private String lastName = "";
-	private List<Role> roles = new ArrayList<Role>();
+	private List<Role> role = new ArrayList<Role>();
 	
 	public User() {
 	}
 	
-	public User(Long userId, String userName, String firstName, String lastName, List<Role> roles) {
+	public User(Long userId, String userName, String firstName, String lastName, List<Role> role) {
 		this.userId = userId;
 		this.userName = userName;
 		this.firstName  = firstName;
 		this.lastName = lastName;
-		this.roles = roles;
+		this.role = role;
 	}
 	
 	public Long getUserId() {
@@ -57,12 +57,12 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public List<Role> getRoles() {
-		return roles;
+	public List<Role> getRole() {
+		return role;
 	}
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
+	public void setRole(List<Role> role) {
+		this.role = role;
 	}
 	
 }

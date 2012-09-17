@@ -48,39 +48,53 @@ public class UserController {
 			);
 	}
 	
-	private List<User> getUser() {
+	private List<User> getLocalUser() {
 		return new ArrayList<User>(users.values());
 	}
 	
-	private User getUser(Long userId) {
+	private User getLocalUser(Long userId) {
 		return users.get(userId);
+	}
+	
+	@GET
+	@Path("/get")
+	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+	public List<User> getUser() {
+		return getLocalUser();
+	}
+	
+	@GET
+	@Path("/get/{userId}")
+	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+	public User getUser(@PathParam("userId") Long userId) {
+		return getLocalUser(userId);
 	}
 	
 	@GET
 	@Path("/get/json")
 	@Produces({MediaType.APPLICATION_JSON})
 	public List<User> getUserAsJson() {
-		return getUser();
+		return getLocalUser();
 	}
 	
 	@GET
 	@Path("/get/{userId}/json")
 	@Produces({MediaType.APPLICATION_JSON})
 	public User getUserAsJson(@PathParam("userId") Long userId) {
-		return getUser(userId);
+		return getLocalUser(userId);
 	}
 	
 	@GET
 	@Path("/get/xml")
 	@Produces({MediaType.APPLICATION_XML})
 	public List<User> getUserAsXml() {
-		return getUser();
+		return getLocalUser();
 	}
 	
 	@GET
 	@Path("/get/{userId}/xml")
 	@Produces({MediaType.APPLICATION_XML})
 	public User getUserAsXml(@PathParam("userId") Long userId) {
-		return getUser(userId);
+		return getLocalUser(userId);
 	}
 }
