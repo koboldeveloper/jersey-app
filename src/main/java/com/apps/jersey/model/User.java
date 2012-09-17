@@ -1,4 +1,4 @@
-package com.aol.apps.jersey.model;
+package com.apps.jersey.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
